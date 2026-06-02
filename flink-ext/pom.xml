@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.mediav</groupId>
+    <artifactId>adq-flink</artifactId>
+    <version>86</version>
+  </parent>
+
+  <groupId>net.qihoo.ads</groupId>
+  <artifactId>flink-ext</artifactId>
+  <version>3.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>flink-ext</name>
+
+  <properties>
+    <!-- set to gitlab project name -->
+    <project.directory>casino/flink-ext</project.directory>
+
+    <!-- enable reproducible release build -->
+    <project.build.outputTimestamp>${git.commit.time}</project.build.outputTimestamp>
+
+    <jacoco.instruction.coverage>0.5</jacoco.instruction.coverage>
+    <jacoco.branch.coverage>0.3</jacoco.branch.coverage>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.kafka</groupId>
+      <artifactId>kafka-clients</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.flink</groupId>
+      <artifactId>flink-streaming-java</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.flink</groupId>
+      <artifactId>flink-connector-kafka</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.flink</groupId>
+      <artifactId>flink-metrics-dropwizard</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.github.ben-manes.caffeine</groupId>
+      <artifactId>caffeine</artifactId>
+      <version>2.8.5</version>
+    </dependency>
+    <dependency>
+      <groupId>net.almson</groupId>
+      <artifactId>almson-refcount</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.flink</groupId>
+      <artifactId>flink-connector-base</artifactId>
+    </dependency>
+
+    <!-- test stuff -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.flink</groupId>
+      <artifactId>flink-clients</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <!-- for test Loggers -->
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-slf4j-impl</artifactId>
+      <version>2.19.0</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <configuration>
+          <excludes>
+            <exclude>net/qihoo/ads/patched/</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <scm>
+    <tag>HEAD</tag>
+  </scm>
+</project>

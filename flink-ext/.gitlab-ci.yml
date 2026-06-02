@@ -1,0 +1,4 @@
+include:
+- project: casino/gitlab-ci-templates
+  ref: v0.0.5
+  file: pipelines/maven-simple-jar.gitlab-ci.yml
