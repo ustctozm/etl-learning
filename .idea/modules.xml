@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/etl-learning.iml" filepath="$PROJECT_DIR$/.idea/etl-learning.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flink-ext/flink-ext.iml" filepath="$PROJECT_DIR$/flink-ext/flink-ext.iml" />
+    </modules>
+  </component>
+</project>
